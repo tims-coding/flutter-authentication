@@ -41,6 +41,7 @@ class _EmailRecoveryState extends State<EmailRecovery> {
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
@@ -61,63 +62,60 @@ class _EmailRecoveryState extends State<EmailRecovery> {
                       child: Text(
                         'Forgot Password',
                         style: TextStyle(
-                          fontSize: phoneMode ? 40.sp : 40.sp,
+                          fontSize: 35.sp,
                         ),
                       ),
                     )
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(
-                    right: phoneMode ? 20.sp : 100.sp,
-                    left: phoneMode ? 20.sp : 100.sp,
-                    top: 180.sp),
-                decoration: BoxDecoration(
-                  color: Colors.black45,
-                  borderRadius: BorderRadius.all(Radius.circular(20.sp)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(10.0.sp),
-                  child: TextField(
-                    style: TextStyle(fontSize: 30.sp),
-                    controller: _emailController,
-                    onChanged: (email) => _updateState(),
-                    decoration: InputDecoration(
-                      icon: Icon(
-                        FontAwesomeIcons.solidEnvelope,
-                        size: 45.sp,
+              Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(
+                        left: 20, right: 20, top: 5, bottom: 5),
+                    child: Material(
+                      elevation: 8,
+                      color: Colors.grey[400],
+                      borderRadius: BorderRadius.all(Radius.circular(40)),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: TextField(
+                          controller: _emailController,
+                          onChanged: (email) => _updateState(),
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(FontAwesomeIcons.solidEnvelope),
+                            labelText: 'Email',
+                            hintText: 'test@test.com',
+                          ),
+                        ),
                       ),
-                      labelText: 'Email',
-                      hintText: 'test@test.com',
                     ),
                   ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.sp),
+                    child: Text(
+                      'Enter your email and we will send you \n a link to reset your password.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18.sp, height: 1.5),
+                    ),
+                  ),
+                ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 20.sp),
-                child: Text(
-                  'Enter your email and we will send you \n a link to reset your password.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 25.sp,
-                      color: Colors.white.withOpacity(.6),
-                      height: 1.5),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: phoneMode ? 100.sp : 150.sp),
+                padding: const EdgeInsets.only(bottom: 50.0),
                 child: RawMaterialButton(
                   onPressed: () {
                     auth.resetPassword(_email);
                     Navigator.pushReplacementNamed(context, '/');
                   },
                   elevation: 2.0,
-                  fillColor: Colors.white,
+                  fillColor: Colors.blue,
                   child: Icon(
                     FlutterIcons.arrow_forward_mdi,
                     size: phoneMode ? 40.sp : 70.0.sp,
-                    color: Colors.blue,
+                    color: Colors.white,
                   ),
                   padding: EdgeInsets.all(15.0),
                   shape: CircleBorder(),

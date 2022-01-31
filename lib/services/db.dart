@@ -3,6 +3,29 @@ import 'package:flutter_ledger/services/services.dart';
 import 'dart:async';
 import './globals.dart';
 
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+final CollectionReference _mainCollection = _firestore.collection('Test');
+
+class Database {
+  static Future<void> addItem({
+    String title,
+    String description,
+  }) async {
+    DocumentReference documentReferencer =
+        _mainCollection.doc('12345678').collection('items').doc();
+
+    Map<String, dynamic> data = <String, dynamic>{
+      "title": title,
+      "description": description,
+    };
+
+    await documentReferencer
+        .set(data)
+        .whenComplete(() => print("Note item added to the database"))
+        .catchError((e) => print(e));
+  }
+}
+
 class Document<T> {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   final String path;

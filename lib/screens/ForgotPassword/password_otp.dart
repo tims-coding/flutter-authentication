@@ -125,7 +125,7 @@ class _PasswordOTPState extends State<PasswordOTP> {
                       child: Text(
                         'OTP Verification',
                         style: TextStyle(
-                          fontSize: phoneMode ? 40.sp : 40.sp,
+                          fontSize: 35.sp,
                         ),
                       ),
                     ),
@@ -140,7 +140,6 @@ class _PasswordOTPState extends State<PasswordOTP> {
                   color: Colors.blue,
                 ),
               ),
-              Text(widget.phone),
               Padding(
                 padding: EdgeInsets.only(
                     left: phoneMode ? 10.sp : 75.sp,
@@ -200,10 +199,7 @@ class _PasswordOTPState extends State<PasswordOTP> {
                 child: Text(
                   'You have been sent a verification text. \n Your OTP code will be valid for 15 minutes.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 25.sp,
-                      color: Colors.white.withOpacity(.6),
-                      height: 1.5),
+                  style: TextStyle(fontSize: 18.sp, height: 1.5),
                 ),
               ),
             ],

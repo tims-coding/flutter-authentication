@@ -50,7 +50,7 @@ class _SelectRecoveryProcessState extends State<SelectRecoveryProcess> {
                     child: Text(
                       'Select Recovery',
                       style: TextStyle(
-                        fontSize: phoneMode ? 40.sp : 40.sp,
+                        fontSize: 35.sp,
                       ),
                     ),
                   )
@@ -64,80 +64,54 @@ class _SelectRecoveryProcessState extends State<SelectRecoveryProcess> {
                 children: [
                   InkWell(
                     onTap: () => Navigator.of(context).push(_createRoute()),
-                    child: SizedBox(
-                      width: 200.sp,
-                      height: 250.sp,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.sp),
-                          side: BorderSide(
-                              color: Colors.blue.withOpacity(.5), width: 5),
-                        ),
-                        clipBehavior: Clip.antiAlias,
-                        child: Padding(
-                          padding: EdgeInsets.all(10.0.sp),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                FlutterIcons.mail_ant,
-                                color: Colors.blue,
-                                size: 100.sp,
-                              ),
-                              Text(
-                                'EMAIL',
-                                style: TextStyle(
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              Text(
-                                'example@test.com',
-                                style: TextStyle(
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ],
-                          ),
+                    child: Material(
+                      elevation: 8,
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(30),
+                      child: Padding(
+                        padding: EdgeInsets.all(40.0.sp),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              FlutterIcons.mail_ant,
+                              color: Colors.blue,
+                              size: 80.sp,
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'EMAIL',
+                              style: TextStyle(
+                                  fontSize: 20.sp, fontWeight: FontWeight.w400),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
                   InkWell(
                     onTap: () => Navigator.of(context).push(_createRoute2()),
-                    child: SizedBox(
-                      width: 200.sp,
-                      height: 250.sp,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.sp),
-                          side: BorderSide(
-                              color: Colors.blue.withOpacity(.5), width: 5),
-                        ),
-                        clipBehavior: Clip.antiAlias,
-                        child: Padding(
-                          padding: EdgeInsets.all(10.0.sp),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                FlutterIcons.phone_ant,
-                                color: Colors.blue,
-                                size: 100.sp,
-                              ),
-                              Text(
-                                'PHONE',
-                                style: TextStyle(
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              Text(
-                                'xxx-xxx-xxxx',
-                                style: TextStyle(
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ],
-                          ),
+                    child: Material(
+                      elevation: 8,
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(30),
+                      child: Padding(
+                        padding: EdgeInsets.all(40.0.sp),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              FlutterIcons.phone_ant,
+                              color: Colors.blue,
+                              size: 80.sp,
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'PHONE',
+                              style: TextStyle(
+                                  fontSize: 20.sp, fontWeight: FontWeight.w400),
+                            ),
+                          ],
                         ),
                       ),
                     ),

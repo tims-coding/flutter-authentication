@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
               color: Colors.black87,
             ),
             // your customizations here
-            brightness: Brightness.dark,
+            brightness: Brightness.light,
             textTheme: TextTheme(
               bodyText1: TextStyle(fontSize: 18),
               bodyText2: TextStyle(fontSize: 16),
